@@ -37,8 +37,8 @@ fun FeedScreen(
     var selectedTab by rememberSaveable { mutableStateOf("para ti") }
     var searchQuery by rememberSaveable { mutableStateOf ("") }
     var showShortReadsOnly by rememberSaveable { mutableStateOf(false) }
-
-    var applauseCount = 0
+    // cuando se puso el var applauseCount by remember { mutableStateOf(0) } ahi empso a funcionar casi todo ya que los aplausos funcionan y las rotacioes tambien, pero la busqueda esta un poco tosca
+    var applauseCount by remember { mutableStateOf(0) }
     // cuando se cambio a var applauseCount = 0 se pudo ver que aunque el applauseCount esta funcionando, lo que hace es que el compose no esta observando la variable
     //lo que pasara es que el compose nunca se entra del cambio, asi que no se va aintroducir un numero
     val visibleArticles: List<Article> = articles.filter { article ->
