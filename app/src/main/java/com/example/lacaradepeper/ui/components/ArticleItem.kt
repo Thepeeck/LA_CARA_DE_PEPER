@@ -1,5 +1,6 @@
 package com.example.lacaradepeper.ui.components
 
+import android.widget.Space
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -24,9 +25,9 @@ import androidx.compose.ui.unit.sp
 import com.example.lacaradepeper.model.Article
 
 @Composable
-fun ArticleItem(
+fun Article(
     article: Article,
-    modifier: Modifier = Modifier
+    modifier: Modifier
 
 ){
     Row(
@@ -39,13 +40,13 @@ fun ArticleItem(
         Column(modifier = Modifier.weight(1f)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(
-                    modifier = Modifier
+                    modifier = modifier
                         .size(20.dp)
                         .clip(CircleShape)
                         .background(article.avatarColor)
                 )
                 Spacer(modifier = Modifier.width(6.dp))
-                Text(article.name, fontSize = 12.sp, color = Color.Gray)
+                Text(article.title, fontSize = 12.sp, color = Color.Gray)
 
             }
             Spacer(modifier = Modifier.height(8.dp))
